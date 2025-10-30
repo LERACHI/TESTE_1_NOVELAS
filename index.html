@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--
+██╗     ███████╗ █████╗ ███╗   ██╗██████╗ ██████╗  ██████╗     ██████╗  █████╗  ██████╗██╗  ██╗██╗
+██║     ██╔════╝██╔══██╗████╗  ██║██╔══██╗██╔══██╗██╔═══██╗    ██╔══██╗██╔══██╗██╔════╝██║  ██║██║
+██║     █████╗  ███████║██╔██╗ ██║██║  ██║██████╔╝██║   ██║    ██████╔╝███████║██║     ███████║██║
+██║     ██╔══╝  ██╔══██║██║╚██╗██║██║  ██║██╔══██╗██║   ██║    ██╔══██╗██╔══██║██║     ██╔══██║██║
+███████╗███████╗██║  ██║██║ ╚████║██████╔╝██║  ██║╚██████╔╝    ██║  ██║██║  ██║╚██████╗██║  ██║██║
+╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝
+                                                                                                  
+-->
+<html lang="pt-BR">
+  <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>		Assista seus temas favoritos aqui</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #e50914;
+    margin-bottom: 20px;
+  }
+
+  #novelas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .poster {
+    width: 100%;
+    height: 375px;
+    object-fit: cover;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  .content h2 {
+    color: #e50914;
+    margin: 0 0 10px;
+    font-size: 18px;
+  }
+
+  .content p {
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 5px 0;
+    color: #ccc;
+  }
+
+  .content a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #fff;
+    background: #e50914;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .content a:hover {
+    background: #b00710;
+  }
+
+  .rating {
+    color: #f5c518;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+</nav>
+
+<h1>Escolha e Assista</h1>
+
+<div id="novelas"></div>
+
+<script>
+  const novelas = [
+    {
+      title: 		"Teresa",
+      year: 2010,
+      country: "México",
+      language: "Espanhol",
+      episodes: 152,
+      poster: "teresa.jpg",
+      cast: ["Angelique Boyer", "Sebastián Rulli", "Aarón Díaz", "Ana Brenda Contreras"],
+      streamingUrl: "https://www.primevideo.com/detail/Teresa/0LLBNQLRAZGOOAI2GWIPR1OY08",
+      platform: "PrimeVideo",
+      rating: 8.5
+    },
+    {
+      title: 		"Fatmagül",
+      year: 2010,
+      country: "Turquia",
+      language: "Turco",
+      episodes: 80,
+      poster: "fatima.jpg",
+      cast: ["Beren Saat", "Engin Akyürek", "Fırat Çelik", "Sumru Yavrucuk"],
+      streamingUrl: "https://www.primevideo.com/-/pt_PT/detail/Fatmag%C3%BCl/0GA0VPEIP4EKAD5617X5DJ9AHR",
+      platform: "PrimeVideo",
+      rating: 9.3
+    },
+    {
+      title: "O Famoso Alfaiate",
+      year: 2004,
+      country: "Turquia",
+      language: "Português",
+      episodes: 30,
+      poster: "famoso.jpg",
+      cast: ["Çağatay Ulusoy", "Salih Bademci", "Şifanur Gül"],
+      streamingUrl: "famoso.jpg",
+      platform: "Netflix",
+      rating: 8.8
+    },
+    {
+      title: "Amor Eterno",
+      year: 2015,
+      country: "Turquia",
+      language: "Turco",
+      episodes: 74,
+      poster: "amoreterno.jpg",
+      cast: ["Neslihan Atagül", "Burak Özçivit", "Kaan Urgancıoğlu", "Neşe Baykent"],
+      streamingUrl: "https://www.primevideo.com/-/pt/detail/Amor-eterno/0FU8S6TR10Q6FB1VVNLK49C6R4",
+      platform: "PrimeVideo",
+      rating: 9.1
+    },
+    {
+      title: "La Reina del Sur",
+      year: 2011,
+      country: "México",
+      language: "Espanhol",
+      episodes: 63,
+      poster: "lareina.jpg",
+      cast: ["Kate del Castillo", "Humberto Zurita", "Rafael Amaya"],
+      streamingUrl: "https://www.netflix.com/br/title/70205672",
+      platform: "Netflix",
+      rating: 9.0
+    },
+    {
+      title: "As Mil e Uma Noites",
+      year: 2006,
+      country: "Turquia",
+      language: "Turco",
+      episodes: 90,
+      poster: "asmil.jpg",
+      cast: ["Bergüzar Korel", "Halit Ergenç", "Tardu Flordun", "Metin Çekmez"],
+      streamingUrl: "https://www.primevideo.com/detail/As-Mil-e-Uma-Noites/0IIQS10ETAHMUT2280CHOYKG3L",
+      platform: "PrimeVideo",
+      rating: 8.7
+    },
+    {
+      title: "Asas da Ambição",
+      year: 2016,
+      country: "Turquia",
+      language: "Português",
+      episodes: 30,
+      poster: "asas.jpg",
+      cast: ["Birce Akalay", "Miray Daner", "İbrahim Çelikkol"],
+      streamingUrl: "https://www.netflix.com/br/title/81303889",
+      platform: "Netflix",
+      rating: 9.4
+    },
+    {
+      title: "Sortilégio",
+      year: 2009,
+      country: "México",
+      language: "Espanhol",
+      episodes: 95,
+      poster: "sortile.jpg",
+      cast: ["Jacqueline Bracamontes", "David Zepeda", "William Levy"],
+      streamingUrl: "https://www.primevideo.com/-/pt/detail/Sortilegio/0GZN6AL8HXO9HAMCA49E3FQL2A",
+      platform: "PrimeVideo",
+      rating: 8.6
+    },
+    {
+      title: "Love 101",
+      year: 2020,
+      country: "Turquia",
+      language: "Português",
+      episodes: 20,
+      poster: "love.jpg",
+      cast: ["Pınar Deniz", "Kubilay Aka", "Mert Yazıcıoğlu"],
+      streamingUrl: "https://www.netflix.com/br/title/81080697",
+      platform: "Netflix",
+      rating: 9.2
+    },
+    {
+      title: "Corazón Salvaje",
+      year: 2009,
+      country: "México",
+      language: "Espanhol",
+      episodes: 135,
+      poster: "corazon.jpg",
+      cast: ["Eduardo Yáñez", "Aracely Arámbula", "Cristián de la Fuente", "Nora Salinas"],
+      streamingUrl: "https://www.primevideo.com/-/pt/detail/Corazón-Salvaje/0JFEB3S1VNN57P3PYSD2ZP7KCE",
+      platform: "PrimeVideo",
+      rating: 8.4
+    },
+    {
+      title: "Meu Nome é Melek",
+      year: 2019,
+      country: "Turquia",
+      language: "Espanhol",
+      episodes: 30,
+      poster: "melek.jpg",
+      cast: ["Ece Özdikici", "Zeyno Eracar", "Nizam Namidar"],
+      streamingUrl: "https://www.primevideo.com/-/pt/detail/Melek/0O5K5RA70Z9ZXG65J39LP49REN",
+      platform: "PrimeVideo",
+      rating: 8.9
+    },
+    {
+      title: "Meia-Noite no Hotel Pera Palace",
+      year: 2022,
+      country: "Turquia",
+      language: "Turco",
+      episodes: 20,
+      poster: "pera.jpg",
+      cast: ["Hazal Kaya", "Tansu Biçer", "Selahattin Paşalı"],
+      streamingUrl: "https://www.netflix.com/br/title/81212136",
+      platform: "Netflix",
+      rating: 8.9
+    }
+  ];
+
+  const container = document.getElementById("novelas");
+
+  novelas.forEach(novela => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <img src="${novela.poster}" alt="${novela.title}" class="poster">
+      <div class="content">
+        <h2>${novela.title} (${novela.year})</h2>
+        <p><strong>País:</strong> ${novela.country}</p>
+        <p><strong>Idioma:</strong> ${novela.language}</p>
+        <p><strong>Episódios:</strong> ${novela.episodes}</p>
+        <p><strong class="rating">Nota:</strong> ${novela.rating}</p>
+        <p>${novela.synopsis}</p>
+        <p><strong>Elenco:</strong> ${novela.cast.join(", ")}</p>
+        <a href="${novela.streamingUrl}" target="_blank">Assistir em ${novela.platform}</a>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
